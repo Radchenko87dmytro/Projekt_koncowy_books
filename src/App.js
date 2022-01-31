@@ -1,13 +1,17 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Title from './components/Tytle';
 
 function App() {
   return (
     <div className="App">
+    <Title></Title>
+
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Editt <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -18,6 +22,16 @@ function App() {
           Learn React
         </a>
       </header>
+      {/* <imput></imput>
+      <imput></imput>
+      <imput></imput>
+      <imput></imput>
+      <imput></imput>
+      <imput></imput>
+      <imput></imput>
+      <imput></imput>
+      <imput></imput>
+      <imput></imput> */}
     </div>
   );
 }
