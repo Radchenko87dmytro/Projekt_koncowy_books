@@ -1,17 +1,14 @@
 import logo from './logo.svg';
 import './App.scss';
-import Title from './components/Tytle';
-
+import AllBooks from './views/AllBooks';
+import Button from './components/Button';
 function App() {
   return (
     <div className="App">
-    <Title></Title>
-
-
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Editt <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -22,16 +19,15 @@ function App() {
           Learn React
         </a>
       </header>
-      {/* <imput></imput>
-      <imput></imput>
-      <imput></imput>
-      <imput></imput>
-      <imput></imput>
-      <imput></imput>
-      <imput></imput>
-      <imput></imput>
-      <imput></imput>
-      <imput></imput> */}
+      <div>
+        <AllBooks></AllBooks>
+      </div>
+
+      <Button classButton="success" ButtonValue="Sukces"></Button>
+      <Button classButton="error" ButtonValue="Dramat"></Button>
+      <Button classButton="edit" ButtonValue="Wiatry zmian"></Button>
+
+
     </div>
   );
 }

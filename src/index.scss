@@ -1,9 +1,3 @@
-:root {
-  --bg-color: red;
-  --font-size-level-1: 40px;
-  --font-size-level-2: 35px;
-}
-
 
 
 body {
@@ -13,29 +7,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--bg-color)
+
 }
+.App-header {
+  .App-log {
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-
-.App-heder {
-  // .App-log{
-
-  // }
-  p{
+  }
+  p {
     code {
       color: red;
       &:hover {
-        color: brown;
+        color: deeppink;
       }
     }
   }
 }
-// .App-header p code {
+.App-header p code {
 
-// }
+}

@@ -1,3 +1,5 @@
+@import './var/podstawowe.scss';
+
 .App {
   text-align: center;
 }
@@ -23,9 +25,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.xd {
+  @include input-main;
+}
 .App-link {
-  color: #61dafb;
+  @include paragraf;
 }
 
 @keyframes App-logo-spin {

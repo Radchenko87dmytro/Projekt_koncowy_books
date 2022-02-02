@@ -1,10 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'; 
+
 
 class Author extends Component {
-
+    // render zwraca nam widok 
     render() {
         return (
-            <h2 className={this.props.classTitle2}>{this.props.title2}</h2>
+            <div>
+                <h2 className={this.props.classAuthor}>{this.props.authorValue}</h2>
+
+            </div>
+
         )
     }
 }

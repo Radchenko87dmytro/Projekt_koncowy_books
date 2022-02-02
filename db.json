@@ -19,10 +19,21 @@
   "books": [
     {
       "id": 1,
-      "tytuł": "Ogniem i mieczem",
-      "author": "Adam Mickiewicz",
-      "opis": "Epopeja "
+     "tytul": "Ogniem i mieczem",
+     "autor": "Adam Mickiewicz",
+     "opis": "Epopeja kosmiczna dla TVP"
+    },
+    {
+      "id": 2,
+     "tytul": "Pan Tadeusz",
+     "autor": "Stefan Żeromski",
+     "opis": "Długie i nudne"
+    },
+    {
+      "id": 3,
+     "tytul": "Ludzie bezdomnie",
+     "autor": "Henryk Sienkiewicz",
+     "opis": "Opowieś dla arhitekótw o szklanych budynkach"
     }
   ]
-
 }
