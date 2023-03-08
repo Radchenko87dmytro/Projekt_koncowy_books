@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; 
+import '../var/podstawowe.scss';
 
 
 class Author extends Component {
@@ -6,7 +7,7 @@ class Author extends Component {
     render() {
         return (
             <div>
-                <h2 className={this.props.classAuthor}>{this.props.authorValue}</h2>
+                <h2 className={this.props.classAuthor}>{this.props.author}</h2>
 
             </div>
 

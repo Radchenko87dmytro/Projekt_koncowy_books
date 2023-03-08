@@ -6,7 +6,7 @@ class Opis extends Component {
     render() {
         return (
             <div>
-                <p className={this.props.classOpis}>{this.props.opisValue}</p>
+                <p className={this.props.classOpis}>{this.props.opis}</p>
 
             </div>
 
