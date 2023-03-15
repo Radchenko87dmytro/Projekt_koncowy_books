@@ -33,45 +33,33 @@ import './AllBooks.scss';
 
 const AllBooks =(props)=> {
 
-      
-
-    
     const[newBook, setNewBook]=useState([])
     const[stateValue, setNewBookValue] =useState(state)
 
+    const deleteBook = (pos)=>{
+        props.deleteBook(pos)
+     }
 
-        //  const addBookHandler=()=>{
-        //     //console.log(inputValue)
-        //     //(props.addBook) 
-        //  } 
-    //  const addBookHandler=(inputValue)=>{
-    //     console.log(inputValue)
-  
-  const addBookHandler = (props.addBookHandler)
-  console.log(addBookHandler)
- const addBookH = (addBookHandler)=>{
-    console.log(addBookHandler)
-    setNewBook([addBookHandler])
-         console.log(newBook)
-    console.log(addBookHandler)
+    console.log(props.stateValue.length)
     
- }
-        
-      const addBookHandle= (props)=>{
-      const s= (props.addBookHandler)
-       
-        
-        setNewBookValue([...stateValue, ])
-        
-    }
-
         return (
             <div className='allBooks_body'>
                 <div className='allBooks_border' >
-                    {stateValue.map((stateValue, index) => 
-                        <OneBook number={index+1}  state={stateValue} key={index}/> 
+
+                    {/* {props.stateValue.map((stateValue, pos) => 
+                        <OneBook deleteBook={()=>deleteBook(pos)}  number={pos+1}  state={stateValue} key={pos}/> 
                     )
-                }
+                } */}
+        
+                {props.stateValue.length == 0 
+                    ? 
+                    <h2>Book store is empty</h2>
+                    :
+                    props.stateValue.map((stateValue, pos) => 
+                        <OneBook deleteBook={()=>deleteBook(pos)}  number={pos+1}  state={stateValue} key={pos}/> 
+                    )
+                }     
+
                 </div>
             </div>
         )

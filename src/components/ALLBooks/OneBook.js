@@ -9,8 +9,11 @@ class OneBook extends Component {
 
     render() {
 
-        // const del = this.props.deleteBook()
-
+         const deleteBook = ()=>{
+            console.log("del")
+            this.props.deleteBook()
+         }
+        
         return (
             <div className='oneBook_body'>
               <h1>Book {this.props.number}</h1> 
@@ -18,7 +21,7 @@ class OneBook extends Component {
               <Author classAuthor="author-class" author={this.props.state.author}></Author>
               <Opis classOpis="opis-class" opis={this.props.state.opis}></Opis>
               <Delete_book Delete_book = "Delete" 
-                           deleteBook={ this.props}/>
+                           deleteBook={deleteBook}/>
             </div>
 
         )

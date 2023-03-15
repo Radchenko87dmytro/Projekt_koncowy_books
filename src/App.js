@@ -11,25 +11,25 @@ import OneBook from './components/ALLBooks/OneBook';
 
 const state = [
   {
-  id: 1,
+  id: 0,
   headLine: "W pustyni i puszczy",
   author: "Juliusz Słowacki",
   opis: "Ksiązka długa, fajna i nudna jedocześnie. ",
+ },
+ {
+  id: 1,
+  headLine: "Zniewolony umysł",
+  author: "Czesław Miłosz",
+  opis: "Ksiązka fajna",
  },
  {
   id: 2,
-  headLine: "W pustyni",
-  author: "Juliusz ",
-  opis: "Ksiązka długa, . ",
- },
- {
-  id: 3,
   headLine: "W pustyni i puszczy",
   author: "Juliusz Słowacki",
   opis: "Ksiązka długa, fajna i nudna jedocześnie. ",
  },
  {
-  id: 4,
+  id: 3,
   headLine: "fbdfb",
   author: "dfbdfbi",
   opis: "dbdf ",
@@ -38,28 +38,32 @@ const state = [
 ]
 
 const App = (props)=> {
-  const [input, setInValue] = useState([])
-
   
   const[stateValue, setNewBookValue] =useState(state)
     
      const addBookHandler = (inputValue)=>{
-        console.log(inputValue)
-        
-        setInValue(inputValue)
-        console.log(input)
         setNewBookValue([...stateValue, inputValue])
     }
 
-   
+  const deleteBook = pos =>{
+
+    if (window.confirm("Are you sure delete Book?")){ //modal window
+    console.log(stateValue[pos])
+    console.log(pos)
+    const temp = [...stateValue]
+    temp.splice(pos, 1)
+    setNewBookValue( temp)
+    //setNewBookValue(stateValue.filter(b => b.pos !== pos))
+    }
+  } 
+ 
+
     
   return (
     <div className="App">
-      <Header addBookHandler={addBookHandler}
-              
-              />
-     
-      <AllBooks addBookHandler={input}></AllBooks>
+      <Header addBookHandler={addBookHandler} />
+      <AllBooks  stateValue={stateValue} deleteBook={deleteBook} />
+      
       
       <Button classButton="success" ButtonValue="Sukces"></Button>
       <Button classButton="error" ButtonValue="Dramat"></Button>
@@ -68,15 +72,19 @@ const App = (props)=> {
 
 
 
+      
 
-      <div className='allBooks_body'>
+      {/* <AllBooks addBookHandler={addBookHandler}/> */}
+
+              <div className='allBooks_body'>
                 <div className='allBooks_border'>
                     {stateValue.map((stateValue, index) => 
                         <OneBook  number={index+1}  state={stateValue} key={index}/> 
                     )
                 }
                 </div>
-            </div>
+              </div>
+
     <br></br>
     <br></br>
     <br></br>

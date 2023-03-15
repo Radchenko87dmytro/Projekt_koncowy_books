@@ -43,7 +43,7 @@ const addBookHandler = (inputValue)=>{
                 <button>Sign up</button>
             </div>
             <div className='input_area' >
-                {inpntFormVisible&&(<InputForm addBookHandler={addBookHandler}/>)}
+                {inpntFormVisible&&(<InputForm addBookHandler={addBookHandler} cancelHandler={() => setInpntFormVisible(false)}/>)}
             </div> 
             
         </div>

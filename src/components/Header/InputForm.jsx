@@ -36,7 +36,11 @@ const InputForm = (props) =>{
          setAuthorValue("");
          setDescriptionValue("");
     }
-   //props.saveDataInput()
+
+   const cancelHandler = ()=>{
+    console.log("cancel")
+    props.cancelHandler()
+   }
 
         return (
             <div className='input_form_items' >
@@ -53,7 +57,7 @@ const InputForm = (props) =>{
                     <input value={descriptionValue} onChange={descriptionChangeHandler}></input>
                 </div>
                 <button onClick={saveDataInput}>Add book</button>
-                <button>Cancel</button>
+                <button onClick={cancelHandler}>Cancel</button>
                 
             </div>
          )
