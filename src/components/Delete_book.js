@@ -15,7 +15,7 @@ const deleteBookHandler = () => {
     }
 
         return (
-            <button className={this.props.Delete_book} 
+            <button className={this.props.classDeleteBook} 
                     onClick={deleteBookHandler}>{this.props.Delete_book}
             </button>
         )

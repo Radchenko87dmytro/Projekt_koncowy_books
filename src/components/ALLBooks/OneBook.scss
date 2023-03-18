@@ -18,3 +18,13 @@
 .naglowek-1{
     font-style: italic;
 }
+.Edit_Book{
+    &:hover {
+        color: green;
+}
+}
+.deleteBook{
+    &:hover {
+        color: red;
+}
+}

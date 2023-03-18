@@ -13,8 +13,7 @@ const addBookHandler = (inputValue)=>{
     props.addBookHandler(inputValue)
     console.log(inputValue)
 }
-
-    
+   
 
 
     return (
@@ -32,16 +31,13 @@ const addBookHandler = (inputValue)=>{
             <div className='links'>
                 <h1>Book Store</h1>
                 <button className='header_link' onClick={()=>setInpntFormVisible(true)}>Add book</button>
-                
-                <a className='header_link' href="#">Books list</a>
-                
-
             </div>
             
             <div className='buttons'>
                 <button>Login</button>
                 <button>Sign up</button>
             </div>
+            
             <div className='input_area' >
                 {inpntFormVisible&&(<InputForm addBookHandler={addBookHandler} cancelHandler={() => setInpntFormVisible(false)}/>)}
             </div> 

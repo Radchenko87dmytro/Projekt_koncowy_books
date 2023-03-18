@@ -45,15 +45,16 @@ const App = (props)=> {
         setNewBookValue([...stateValue, inputValue])
     }
 
-  const deleteBook = pos =>{
+  const deleteBook = (pos) =>{
 
     if (window.confirm("Are you sure delete Book?")){ //modal window
-    console.log(stateValue[pos])
-    console.log(pos)
+   
+     console.log(pos)
     const temp = [...stateValue]
     temp.splice(pos, 1)
-    setNewBookValue( temp)
-    //setNewBookValue(stateValue.filter(b => b.pos !== pos))
+    setNewBookValue(temp)
+
+    //setNewBookValue(stateValue.filter(item => item.id !== pos))
     }
   } 
  

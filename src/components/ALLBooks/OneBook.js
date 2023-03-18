@@ -4,6 +4,7 @@ import Title from '../Title';
 import Author from '../Author';
 import './OneBook.scss';
 import Delete_book from '../Delete_book';
+import Edit_book from '../Edit_book';
 
 class OneBook extends Component {
 
@@ -13,6 +14,13 @@ class OneBook extends Component {
             console.log("del")
             this.props.deleteBook()
          }
+         
+        // const edit = ()=>{
+        //     alert("edit")
+        //     console.log("edit")
+        // }
+        
+
         
         return (
             <div className='oneBook_body'>
@@ -20,10 +28,14 @@ class OneBook extends Component {
               <Title classTitle="naglowek-1" title={this.props.state.headLine}></Title>
               <Author classAuthor="author-class" author={this.props.state.author}></Author>
               <Opis classOpis="opis-class" opis={this.props.state.opis}></Opis>
-              <Delete_book Delete_book = "Delete" 
+              <Delete_book classDeleteBook="deleteBook" Delete_book = "Delete" 
                            deleteBook={deleteBook}/>
+               <Edit_book classEditBook="Edit_Book" Edit_book="Edit book"
+                            edit={()=>{this.props.edit()}}
+                           />
+                            {/* edit= {edit} */}
             </div>
-
+                
         )
     }
 }

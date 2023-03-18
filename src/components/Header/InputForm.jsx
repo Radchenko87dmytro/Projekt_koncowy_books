@@ -35,9 +35,11 @@ const InputForm = (props) =>{
          setTitleValue("");
          setAuthorValue("");
          setDescriptionValue("");
+
     }
 
-   const cancelHandler = ()=>{
+
+    const cancelHandler = ()=>{
     console.log("cancel")
     props.cancelHandler()
    }
