@@ -1,13 +1,13 @@
 import React, { Component, useState } from 'react';
-import './Header.scss';
+//import './Header.scss';
 
-const InputForm = (props) =>{
+const EditForm = (props) =>{
 
     console.log(props.state)
 
-    const [titleValue, setTitleValue] = useState("")
-    const [authorValue, setAuthorValue] = useState("")
-    const [descriptionValue, setDescriptionValue] = useState("")
+    const [titleValue, setTitleValue] = useState(props.state.headLine)
+    const [authorValue, setAuthorValue] = useState(props.state.author)
+    const [descriptionValue, setDescriptionValue] = useState(props.state.opis)
 
     const titleChangeHandler = (event) => {
             setTitleValue(event.target.value)
@@ -84,7 +84,7 @@ const InputForm = (props) =>{
 
 } 
 
-export default InputForm;
+export default EditForm;
 
 
 

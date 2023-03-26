@@ -37,7 +37,7 @@ const state = [
  
 ]
 
-const App = (props)=> {
+const App = ()=> {
   
   const[stateValue, setNewBookValue] =useState(state)
     
@@ -58,12 +58,25 @@ const App = (props)=> {
     }
   } 
  
+  const editBook= (inputValue, index)=>{
+    
+    console.log("edit")
+    console.log(inputValue)
+    
+     const allBooks = [...stateValue]
+     allBooks[inputValue.id] = inputValue
+     console.log(allBooks[inputValue.id])
+     setNewBookValue(allBooks)
+
+    
+    }
+  
 
     
   return (
     <div className="App">
       <Header addBookHandler={addBookHandler} />
-      <AllBooks  stateValue={stateValue} deleteBook={deleteBook} />
+      <AllBooks  stateValue={stateValue} deleteBook={deleteBook} editBook={editBook} />
       
       
       <Button classButton="success" ButtonValue="Sukces"></Button>
@@ -77,14 +90,7 @@ const App = (props)=> {
 
       {/* <AllBooks addBookHandler={addBookHandler}/> */}
 
-              <div className='allBooks_body'>
-                <div className='allBooks_border'>
-                    {stateValue.map((stateValue, index) => 
-                        <OneBook  number={index+1}  state={stateValue} key={index}/> 
-                    )
-                }
-                </div>
-              </div>
+              
 
     <br></br>
     <br></br>

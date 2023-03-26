@@ -28,3 +28,40 @@
         color: red;
 }
 }
+
+
+
+
+
+.input_form_items{
+    
+    width: 35%;
+    border-radius: 10px;
+    background: yellowgreen;
+    margin-top: 30px;
+    
+    padding-top: 10px;
+}
+.form_item{
+    
+    padding: 1rem 1rem;
+    border-radius: 15px;
+}
+label{
+    font-weight: bold;
+    margin-bottom: 5rem;
+    
+}
+input{
+    border-radius: 15px;
+    padding:  1rem 6rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+
+.editt_area{
+    display: flex;
+    justify-content: space-around;
+    
+}

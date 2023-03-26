@@ -4,17 +4,7 @@ import './AllBooks.scss';
 
 
 const AllBooks =(props)=> {
-
-    const[editBook, seteditBook] = useState(false)
-    
-
-    
-     const edit = ()=>{
-            alert("edit")
-            console.log("edit")
-            seteditBook(!editBook)
-            console.log(editBook)
-        } 
+     
 
     
         return (
@@ -30,13 +20,11 @@ const AllBooks =(props)=> {
                     ? 
                     <h2>Book store is empty</h2>
                     :
-                    props.stateValue.map((stateValue, pos) => 
-                        <OneBook deleteBook={()=>props.deleteBook(pos)} edit={()=>{edit()}}  number={pos+1}  state={stateValue} key={pos}/>
-                        
+                    props.stateValue.map((stateValue, pos, id) => 
+                        <OneBook deleteBook={()=>props.deleteBook(pos)} number={pos+1}  state={stateValue} key={pos} editBook={()=>props.editBook} pos={pos}/>
                     )
-                    
                 }     
-                    {editBook && <p>edit</p>}
+                    
                 </div>
             </div>
         )

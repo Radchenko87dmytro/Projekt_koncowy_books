@@ -5,8 +5,25 @@ import Author from '../Author';
 import './OneBook.scss';
 import Delete_book from '../Delete_book';
 import Edit_book from '../Edit_book';
+import InputForm from '../Header/InputForm';
+import EditForm from './EditForm';
 
-class OneBook extends Component {
+class OneBook extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state={
+            editBook: false
+        }
+        //this.edit =  this.edit.bind(this)
+        
+    }
+    
+    // edit (inputValue){ 
+    //     console.log("edit")
+    //     console.log(inputValue)
+    //     this.props.edit(inputValue)
+    //     }
 
     render() {
 
@@ -14,13 +31,7 @@ class OneBook extends Component {
             console.log("del")
             this.props.deleteBook()
          }
-         
-        // const edit = ()=>{
-        //     alert("edit")
-        //     console.log("edit")
-        // }
-        
-
+ 
         
         return (
             <div className='oneBook_body'>
@@ -31,9 +42,21 @@ class OneBook extends Component {
               <Delete_book classDeleteBook="deleteBook" Delete_book = "Delete" 
                            deleteBook={deleteBook}/>
                <Edit_book classEditBook="Edit_Book" Edit_book="Edit book"
-                            edit={()=>{this.props.edit()}}
+                            edit={()=>{
+                                this.setState({
+                                    editBook: !this.state.editBook
+                                })
+                            }}
                            />
-                            {/* edit= {edit} */}
+                            
+                <div className='editt_area'>
+                    {this.state.editBook && <EditForm state={this.props.state} pos={this.props.pos} addBookHandler={this.props.editBook()} cancelHandler={()=>{
+                                this.setState({
+                                    editBook: false
+                                })
+                            }}/>}
+                </div>
+                
             </div>
                 
         )
