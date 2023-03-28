@@ -39,8 +39,9 @@ const state = [
 
 const App = ()=> {
   
-  const[stateValue, setNewBookValue] =useState(state)
-    
+  const[stateValue, setNewBookValue] = useState(state)
+  const[selectedSort, setSelectedSort] = useState("")
+
      const addBookHandler = (inputValue)=>{
         setNewBookValue([...stateValue, inputValue])
     }
@@ -67,46 +68,14 @@ const App = ()=> {
      allBooks[inputValue.id] = inputValue
      console.log(allBooks[inputValue.id])
      setNewBookValue(allBooks)
-
-    
     }
   
-
-    
   return (
     <div className="App">
       <Header addBookHandler={addBookHandler} />
       <AllBooks  stateValue={stateValue} deleteBook={deleteBook} editBook={editBook} />
       
-      
-      <Button classButton="success" ButtonValue="Sukces"></Button>
-      <Button classButton="error" ButtonValue="Dramat"></Button>
-      <Button classButton="edit" ButtonValue="Wiatry zmian"></Button>
-      {/* <Edit_book></Edit_book> */}
-
-
-
-      
-
       {/* <AllBooks addBookHandler={addBookHandler}/> */}
-
-              
-
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-
-
-
-    <FundamentalCours/>
-      
 
     </div>
   )

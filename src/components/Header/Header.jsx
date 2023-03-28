@@ -30,12 +30,12 @@ const addBookHandler = (inputValue)=>{
             
             <div className='links'>
                 <h1>Book Store</h1>
-                <button className='header_link' onClick={()=>setInpntFormVisible(true)}>Add book</button>
+                <button className='header_link' onClick={()=>setInpntFormVisible(!inpntFormVisible)}>Add book</button>
             </div>
             
             <div className='buttons'>
-                <button>Login</button>
-                <button>Sign up</button>
+                <button disabled>Login</button>
+                <button disabled>Sign up</button>
             </div>
             
             <div className='input_area' >
