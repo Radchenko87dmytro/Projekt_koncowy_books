@@ -10,37 +10,42 @@ import OneBook from './components/ALLBooks/OneBook';
 
 
 const state = [
+    {
+    id: 0,
+    headLine: "W pustyni i puszczy",
+    author: "Juliusz Słowacki",
+    opis: "Ksiązka długa, fajna i nudna jedocześnie. ",
+  },
   {
-  id: 0,
-  headLine: "W pustyni i puszczy",
-  author: "Juliusz Słowacki",
-  opis: "Ksiązka długa, fajna i nudna jedocześnie. ",
- },
- {
-  id: 1,
-  headLine: "Zniewolony umysł",
-  author: "Czesław Miłosz",
-  opis: "Ksiązka fajna",
- },
- {
-  id: 2,
-  headLine: "W pustyni i puszczy",
-  author: "Juliusz Słowacki",
-  opis: "Ksiązka długa, fajna i nudna jedocześnie. ",
- },
- {
-  id: 3,
-  headLine: "fbdfb",
-  author: "dfbdfbi",
-  opis: "dbdf ",
- },
- 
+    id: 1,
+    headLine: "Zniewolony umysł",
+    author: "Czesław Miłosz",
+    opis: "Ksiązka fajna",
+  },
+  {
+    id: 2,
+    headLine: "Dwukropek",
+    author: "Wisława Szymborska",
+    opis: "Nie nudna ksiązka",
+  },
+  {
+    id: 3,
+    headLine: "JavaScript",
+    author: "Sochacki Tomasz",
+    opis: "Nauka się wykorzystać go w praktyce",
+  },
 ]
+
 
 const App = ()=> {
   
   const[stateValue, setNewBookValue] = useState(state)
-  const[selectedSort, setSelectedSort] = useState("")
+
+  const onChange = (sortValue) =>{
+    console.log(sortValue)
+    setNewBookValue([...stateValue].sort((a, b)=>a[sortValue].localeCompare(b[sortValue])))
+    //setNewBookValue(currentItems.sort((a, b)=>a.sortValue < b.sortValue ? 1 : -1))
+  } 
 
      const addBookHandler = (inputValue)=>{
         setNewBookValue([...stateValue, inputValue])
@@ -73,7 +78,7 @@ const App = ()=> {
   return (
     <div className="App">
       <Header addBookHandler={addBookHandler} />
-      <AllBooks  stateValue={stateValue} deleteBook={deleteBook} editBook={editBook} />
+      <AllBooks  stateValue={stateValue} deleteBook={deleteBook} editBook={editBook} onChange={onChange}/>
       
       {/* <AllBooks addBookHandler={addBookHandler}/> */}
 

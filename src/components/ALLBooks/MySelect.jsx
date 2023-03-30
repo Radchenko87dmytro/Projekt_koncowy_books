@@ -1,14 +1,21 @@
 import React from 'react';
 
 const MySelect = ({options, defaultValue, value, onChange}) => {
+    
+    const  onChangeHandler = (event) =>{
+        console.log(event.target.value)
+        onChange(event.target.value)
+    }
+
     return (
         <div>
-            <p>Filter</p>
+            <h2>Filter</h2>
              <select value={value}
-                     onChange={event => onChange(event.target.value)}
+                     onChange={onChangeHandler}
+                     style={{padding: "20px 20px", borderRadius: "10px"}}
              >
 
-                <option disabled value="">{defaultValue}</option>
+                <option value={defaultValue}>{defaultValue}</option>
                 {options.map(option =>
                     <option key={option.value} value={option.value}>
                         {option.name}
