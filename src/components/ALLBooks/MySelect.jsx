@@ -15,7 +15,7 @@ const MySelect = ({options, defaultValue, value, onChange}) => {
                      style={{padding: "20px 20px", borderRadius: "10px"}}
              >
 
-                <option value={defaultValue}>{defaultValue}</option>
+                <option value="">{defaultValue}</option>
                 {options.map(option =>
                     <option key={option.value} value={option.value}>
                         {option.name}
