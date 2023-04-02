@@ -19,6 +19,7 @@ const AllBooks =(props)=> {
                 <div className='allBooks_border' >
 
                     <MySelect
+<<<<<<< HEAD
                         
                         value={selectedSort}
                         onChange={onChange}
@@ -26,6 +27,12 @@ const AllBooks =(props)=> {
                         options={[
                             {value: "headLine", name : "By title"},
                             {value: "author", name : "By author"},
+=======
+                        defaultValue="Filter by"
+                        options={[
+                            {value: "headLine", name : "By title"},
+                            {value: "author", name : "By authot"},
+>>>>>>> 8e011a324f38add253ed1248892bc180e644f72a
                             {value: "opis", name : "By description"},
                         ]}
                     />

@@ -40,12 +40,16 @@ const state = [
 const App = ()=> {
   
   const[stateValue, setNewBookValue] = useState(state)
+<<<<<<< HEAD
 
   const onChange = (sortValue) =>{
     console.log(sortValue)
     setNewBookValue([...stateValue].sort((a, b)=>a[sortValue].localeCompare(b[sortValue])))
     //setNewBookValue(currentItems.sort((a, b)=>a.sortValue < b.sortValue ? 1 : -1))
   } 
+=======
+  const[selectedSort, setSelectedSort] = useState("")
+>>>>>>> 8e011a324f38add253ed1248892bc180e644f72a
 
      const addBookHandler = (inputValue)=>{
         setNewBookValue([...stateValue, inputValue])
