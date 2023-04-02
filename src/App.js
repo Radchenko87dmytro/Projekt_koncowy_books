@@ -2,7 +2,7 @@
 import './App.scss';
 import AllBooks from './components/ALLBooks/AllBooks';
 import Button from './components/Button';
-import FundamentalCours from './components/fundamentalCoutse';
+//import FundamentalCours from './components/fundamentalCoutse';
 import Edit_book from './components/Edit_book';
 import Header from './components/Header/Header';
 import { useState } from 'react';
