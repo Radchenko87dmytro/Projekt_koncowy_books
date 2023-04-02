@@ -6,17 +6,33 @@ import MySelect from './MySelect';
 
 const AllBooks =(props)=> {
      
+    const[selectedSort, setSelectedSort] = useState("")
 
+    const  onChange = (sortValue) => {
+        setSelectedSort(sortValue)
+        console.log(sortValue)
+        props.onChange(sortValue)
+    }
     
         return (
             <div className='allBooks_body'>
                 <div className='allBooks_border' >
 
                     <MySelect
+<<<<<<< HEAD
+                        
+                        value={selectedSort}
+                        onChange={onChange}
+                        defaultValue="All"
+                        options={[
+                            {value: "headLine", name : "By title"},
+                            {value: "author", name : "By author"},
+=======
                         defaultValue="Filter by"
                         options={[
                             {value: "headLine", name : "By title"},
                             {value: "author", name : "By authot"},
+>>>>>>> 8e011a324f38add253ed1248892bc180e644f72a
                             {value: "opis", name : "By description"},
                         ]}
                     />
