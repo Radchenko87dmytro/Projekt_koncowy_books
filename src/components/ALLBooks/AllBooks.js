@@ -1,40 +1,67 @@
-import React, { Component, useState } from 'react'; 
+import React, { Component, useState, useMemo } from 'react'; 
 import OneBook from './OneBook';
 import './AllBooks.scss';
 import MySelect from './MySelect';
+import SearchForm from './SearchForm';
 
 
 const AllBooks =(props)=> {
      
     const[selectedSort, setSelectedSort] = useState("")
+    
+
+    // function getSortedPosts() {
+    //     if(selectedSort=="All") {
+    //         return props.stateValue
+    //     }
+    // }
+
+    // const sortedAndSearchedPosts = useMemo(() => {
+    //     return props.stateValue.filter(post => post.headLine.include(searchQuery))
+    // }, [searchQuery, props.stateValue])
 
     const  onChange = (sortValue) => {
         setSelectedSort(sortValue)
         console.log(sortValue)
         props.onChange(sortValue)
     }
+
+    const searchFormHandler = (searchQuery)=> {
+        
+        console.log(searchQuery)
+        console.log("work funk search...")
+        props.searchFormHandler(searchQuery)
+        
+    }
+    //setSearchQuery("")
     
         return (
             <div className='allBooks_body'>
                 <div className='allBooks_border' >
 
                     <MySelect
-<<<<<<< HEAD
-                        
                         value={selectedSort}
                         onChange={onChange}
                         defaultValue="All"
                         options={[
                             {value: "headLine", name : "By title"},
                             {value: "author", name : "By author"},
-=======
+
                         defaultValue="Filter by"
                         options={[
                             {value: "headLine", name : "By title"},
                             {value: "author", name : "By authot"},
->>>>>>> 8e011a324f38add253ed1248892bc180e644f72a
                             {value: "opis", name : "By description"},
                         ]}
+                    />
+
+                    <hr></hr>
+                    <hr></hr>
+                    
+                    <SearchForm
+                        //value={searchQuery}
+                        searchFormHandler={searchFormHandler}
+                        placeholder="Search"
                     />
 
                     {/* {props.stateValue.map((stateValue, pos) => 

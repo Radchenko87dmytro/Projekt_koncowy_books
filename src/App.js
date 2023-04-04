@@ -42,11 +42,26 @@ const App = ()=> {
   const[stateValue, setNewBookValue] = useState(state)
 
 
+  //const sortedPosts = 
+
+
   const onChange = (sortValue) =>{
     console.log(sortValue)
-    setNewBookValue([...stateValue].sort((a, b)=>a[sortValue].localeCompare(b[sortValue])))
+    setNewBookValue([...stateValue].sort((a, b)=>a[sortValue].localeCompare(b[sortValue])))  //.sort() method sorts the elements of an array   The localeCompare() method compares two strings in the current locale
     //setNewBookValue(currentItems.sort((a, b)=>a.sortValue < b.sortValue ? 1 : -1))
-  } 
+  }
+  
+  const searchFormHandler = (searchQuery)=>{
+    console.log(searchQuery)
+    //setNewBookValue(x.filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase())))
+    
+    !searchQuery 
+    ?
+    setNewBookValue([...stateValue])
+    :
+    setNewBookValue([...stateValue].filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase())))            
+            
+  }
 
   const[selectedSort, setSelectedSort] = useState("")
 
@@ -82,7 +97,7 @@ const App = ()=> {
   return (
     <div className="App">
       <Header addBookHandler={addBookHandler} />
-      <AllBooks  stateValue={stateValue} deleteBook={deleteBook} editBook={editBook} onChange={onChange}/>
+      <AllBooks  stateValue={stateValue} deleteBook={deleteBook} editBook={editBook} onChange={onChange} searchFormHandler={searchFormHandler}/>
       
       {/* <AllBooks addBookHandler={addBookHandler}/> */}
 
