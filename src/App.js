@@ -41,7 +41,9 @@ const App = ()=> {
   
   const[stateValue, setNewBookValue] = useState(state)
 
+
   //const sortedPosts = 
+
 
   const onChange = (sortValue) =>{
     console.log(sortValue)
@@ -60,6 +62,9 @@ const App = ()=> {
     setNewBookValue([...stateValue].filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase())))            
             
   }
+
+  const[selectedSort, setSelectedSort] = useState("")
+
 
      const addBookHandler = (inputValue)=>{
         setNewBookValue([...stateValue, inputValue])
