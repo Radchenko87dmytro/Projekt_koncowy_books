@@ -2,15 +2,9 @@ import React, {Component} from 'react';
 
 class Delete_book extends Component {
 
-    
-
     render() {
         
-
-
 const deleteBookHandler = () => {
-    console.log("Delete");
-    
     this.props.deleteBook() 
     }
 

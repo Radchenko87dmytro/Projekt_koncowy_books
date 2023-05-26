@@ -1,4 +1,4 @@
-import React, { Component, useState, useMemo } from 'react'; 
+import React, { useState } from 'react'; 
 import OneBook from './OneBook';
 import './AllBooks.scss';
 import MySelect from './MySelect';
@@ -8,32 +8,15 @@ import SearchForm from './SearchForm';
 const AllBooks =(props)=> {
      
     const[selectedSort, setSelectedSort] = useState("")
-    
-
-    // function getSortedPosts() {
-    //     if(selectedSort=="All") {
-    //         return props.stateValue
-    //     }
-    // }
-
-    // const sortedAndSearchedPosts = useMemo(() => {
-    //     return props.stateValue.filter(post => post.headLine.include(searchQuery))
-    // }, [searchQuery, props.stateValue])
 
     const  onChange = (sortValue) => {
         setSelectedSort(sortValue)
-        console.log(sortValue)
         props.onChange(sortValue)
     }
 
     const searchFormHandler = (searchQuery)=> {
-        
-        console.log(searchQuery)
-        console.log("work funk search...")
         props.searchFormHandler(searchQuery)
-        
     }
-    //setSearchQuery("")
     
         return (
             <div className='allBooks_body'>
@@ -64,12 +47,17 @@ const AllBooks =(props)=> {
                     )
                 } */}
         
-                {props.stateValue.length == 0 
+                {props.stateValue.length === 0 
                     ? 
                     <h2>Book store is empty</h2>
                     :
-                    props.stateValue.map((stateValue, pos, id) => 
-                        <OneBook deleteBook={()=>props.deleteBook(pos)} number={pos+1}  state={stateValue} key={pos} editBook={()=>props.editBook} pos={pos}/>
+                    props.stateValue.map((el, pos) => 
+                        <OneBook deleteBook={()=>props.deleteBook(pos)} 
+                                 number={pos+1}  
+                                 state={el} 
+                                 key={el.id} 
+                                 editBook={()=>props.editBook} 
+                                 pos={pos}/>
                     )
                 }     
                     

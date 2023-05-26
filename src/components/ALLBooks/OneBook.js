@@ -5,7 +5,6 @@ import Author from '../Author';
 import './OneBook.scss';
 import Delete_book from '../Delete_book';
 import Edit_book from '../Edit_book';
-import InputForm from '../Header/InputForm';
 import EditForm from './EditForm';
 
 class OneBook extends React.Component {
@@ -13,26 +12,18 @@ class OneBook extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            editBook: false
+            editBook: false,
+            didUpdate: "componentDidUpdate"
         }
-        //this.edit =  this.edit.bind(this)
-        
     }
-    
-    // edit (inputValue){ 
-    //     console.log("edit")
-    //     console.log(inputValue)
-    //     this.props.edit(inputValue)
-    //     }
+
+    componentDidUpdate(){
+        if(this.state.didUpdate != "did")
+        console.log("componentDidUpdate")
+    }
 
     render() {
-
-         const deleteBook = ()=>{
-            console.log("del")
-            this.props.deleteBook()
-         }
- 
-        
+  
         return (
             <div className='oneBook_body'>
               <h1>Book {this.props.number}</h1> 
@@ -40,7 +31,7 @@ class OneBook extends React.Component {
               <Author classAuthor="author-class" author={this.props.state.author}></Author>
               <Opis classOpis="opis-class" opis={this.props.state.opis}></Opis>
               <Delete_book classDeleteBook="deleteBook" Delete_book = "Delete" 
-                           deleteBook={deleteBook}/>
+                           deleteBook={this.props.deleteBook}/>
                <Edit_book classEditBook="Edit_Book" Edit_book="Edit book"
                             edit={()=>{
                                 this.setState({

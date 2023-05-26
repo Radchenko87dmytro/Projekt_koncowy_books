@@ -1,13 +1,10 @@
-//import logo from './logo.svg';
 import './App.scss';
 import AllBooks from './components/ALLBooks/AllBooks';
-import Button from './components/Button';
-//import FundamentalCours from './components/fundamentalCoutse';
-import Edit_book from './components/Edit_book';
 import Header from './components/Header/Header';
 import { useState } from 'react';
-import OneBook from './components/ALLBooks/OneBook';
+import axios from "axios";
 
+const baseUrl = "https://reqres.in/api/users?page=1"
 
 const state = [
     {
@@ -38,64 +35,60 @@ const state = [
 
 
 const App = ()=> {
+
+
+  axios.get(baseUrl).then((res) => {
+    console.log(res.data.data)
+    //setNewBookValue(res.data.data)
+  })
+
+  
   
   const[stateValue, setNewBookValue] = useState(state)
 
-  //const sortedPosts = 
-
   const onChange = (sortValue) =>{
-    console.log(sortValue)
     setNewBookValue([...stateValue].sort((a, b)=>a[sortValue].localeCompare(b[sortValue])))  //.sort() method sorts the elements of an array   The localeCompare() method compares two strings in the current locale
     //setNewBookValue(currentItems.sort((a, b)=>a.sortValue < b.sortValue ? 1 : -1))
   }
   
   const searchFormHandler = (searchQuery)=>{
-    console.log(searchQuery)
-    //setNewBookValue(x.filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase())))
-    
     !searchQuery 
     ?
     setNewBookValue([...stateValue])
     :
-    setNewBookValue([...stateValue].filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase())))            
-            
+    setNewBookValue([...stateValue].filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase())))                   
   }
 
-     const addBookHandler = (inputValue)=>{
-        setNewBookValue([...stateValue, inputValue])
-    }
+  const addBookHandler = (inputValue)=>{
+    setNewBookValue([...stateValue, inputValue])
+  }
 
   const deleteBook = (pos) =>{
-
     if (window.confirm("Are you sure delete Book?")){ //modal window
-   
-     console.log(pos)
     const temp = [...stateValue]
     temp.splice(pos, 1)
     setNewBookValue(temp)
-
     //setNewBookValue(stateValue.filter(item => item.id !== pos))
     }
   } 
  
-  const editBook= (inputValue, index)=>{
-    
-    console.log("edit")
-    console.log(inputValue)
-    
+  const editBook= (inputValue)=>{
      const allBooks = [...stateValue]
      allBooks[inputValue.id] = inputValue
-     console.log(allBooks[inputValue.id])
      setNewBookValue(allBooks)
     }
   
   return (
     <div className="App">
       <Header addBookHandler={addBookHandler} />
-      <AllBooks  stateValue={stateValue} deleteBook={deleteBook} editBook={editBook} onChange={onChange} searchFormHandler={searchFormHandler}/>
-      
-      {/* <AllBooks addBookHandler={addBookHandler}/> */}
+      <AllBooks stateValue={stateValue} 
+                deleteBook={deleteBook} 
+                editBook={editBook} 
+                onChange={onChange} 
+                searchFormHandler={searchFormHandler}/>
 
+
+      
     </div>
   )
 }

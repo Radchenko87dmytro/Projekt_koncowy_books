@@ -10,8 +10,7 @@ const EditForm = (props) =>{
     const [descriptionValue, setDescriptionValue] = useState(props.state.opis)
 
     const titleChangeHandler = (event) => {
-            setTitleValue(event.target.value)
-            //console.log(titleValue) 
+            setTitleValue(event.target.value) 
         }
     const autorChangeHandler = (event) => {
             setAuthorValue(event.target.value)
@@ -20,44 +19,28 @@ const EditForm = (props) =>{
         setDescriptionValue(event.target.value)
         }
 
-        // const submitHandler = (event) => {
-        //     event.preventDefault(); // this method prevents action - request to the server
-
-        //const [idValue, setIdValue] = useState(0)
-        
-// const pos =(pos)=>{
-// console.log(pos)
-// }
-
         
     const saveDataInput = (event)=> {
-        //setIdValue(props.id)
-
-    const     inputValue = {
+       
+    const   inputValue = {
             headLine: titleValue,
             author: authorValue,
             opis: descriptionValue,
             }
+            
           if(props.pos)
           console.log(props.pos)
           inputValue.id = props.pos
-         //console.log(props.pos(pos))
-        // console.log(id(id))
         
          props.addBookHandler(inputValue)
          
-         
-        
          console.log(inputValue)
          setTitleValue("");
          setAuthorValue("");
          setDescriptionValue("");
-
     }
 
-
     const cancelHandler = ()=>{
-    console.log("cancel")
     props.cancelHandler()
    }
 

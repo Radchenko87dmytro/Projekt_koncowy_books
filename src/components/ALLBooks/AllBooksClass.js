@@ -1,38 +1,16 @@
 import React, { Component } from 'react'; 
 import OneBook from './OneBook';
 import './AllBooks.scss';
+import MySelect from './MySelect';
+import SearchForm from './SearchForm';
 
-class AllBooks extends Component {
+class AllBooks extends React.Component {
+
+    constructor(props) 
 
     render () {
 
-       const state = [
-        {
-        id: 1,
-        headLine: "W pustyni i puszczy",
-        author: "Juliusz Słowacki",
-        opis: "Ksiązka długa, fajna i nudna jedocześnie. ",
-       },
-       {
-        id: 2,
-        headLine: "W pustyni",
-        author: "Juliusz ",
-        opis: "Ksiązka długa, . ",
-       },
-       {
-        id: 3,
-        headLine: "W pustyni i puszczy",
-        author: "Juliusz Słowacki",
-        opis: "Ksiązka długa, fajna i nudna jedocześnie. ",
-       },
-       {
-        id: 4,
-        headLine: "fbdfb",
-        author: "dfbdfbi",
-        opis: "dbdf ",
-       },
-
-    ]
+       
 
      const addBookValue = (this.props.addBook)
      console.log(addBookValue)

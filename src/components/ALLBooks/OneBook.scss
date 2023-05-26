@@ -21,11 +21,13 @@
 .Edit_Book{
     &:hover {
         color: green;
+        transform: scale(1.1);
 }
 }
 .deleteBook{
     &:hover {
         color: red;
+        transform: scale(1.1);
 }
 }
 

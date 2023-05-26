@@ -46,9 +46,6 @@ const InputForm = (props) =>{
         
          props.addBookHandler(inputValue)
          
-         
-        
-         console.log(inputValue)
          setTitleValue("");
          setAuthorValue("");
          setDescriptionValue("");
