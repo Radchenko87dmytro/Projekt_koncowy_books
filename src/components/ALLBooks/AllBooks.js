@@ -9,7 +9,7 @@ const AllBooks =(props)=> {
      
     const[selectedSort, setSelectedSort] = useState("")
 
-    const  onChange = (sortValue) => {
+    const onChange = (sortValue) => {
         setSelectedSort(sortValue)
         props.onChange(sortValue)
     }
@@ -57,7 +57,10 @@ const AllBooks =(props)=> {
                                  state={el} 
                                  key={el.id} 
                                  editBook={()=>props.editBook} 
-                                 pos={pos}/>
+                                 pos={pos}
+                                //  id={idItem}
+                                 />
+                                 
                     )
                 }     
                     

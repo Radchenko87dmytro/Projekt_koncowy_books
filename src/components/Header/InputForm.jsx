@@ -33,14 +33,15 @@ const InputForm = (props) =>{
     const saveDataInput = (event)=> {
         //setIdValue(props.id)
 
-    const     inputValue = {
+    const   inputValue = {
+            // id: props.stateValue.length + 1,
             headLine: titleValue,
             author: authorValue,
             opis: descriptionValue,
             }
-          if(props.pos)
-          console.log(props.pos)
-          inputValue.id = props.pos
+        //   if(props.pos)
+        //   console.log(props.pos)
+        //   inputValue.id = props.pos
          //console.log(props.pos(pos))
         // console.log(id(id))
         

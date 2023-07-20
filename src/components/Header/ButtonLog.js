@@ -4,11 +4,11 @@ import { useState } from 'react'
 const ButtonLog = (props) => {
 
     const [click, setClick] = useState(0)
-    console.log(click)
+    //console.log(click)
     
     useEffect(()=>{
         //document.title  = `pressed ${click}`
-        console.log("useEffect")
+        //console.log("useEffect")
         document.h1 = ` useEffect clicks ${click}`
         // {` useEffect ${click}`}
     })
