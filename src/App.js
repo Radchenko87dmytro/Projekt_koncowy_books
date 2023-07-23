@@ -45,6 +45,7 @@ const App = ()=> {
   }
 
 
+
   const onChange = (sortValue) =>{
     setNewBookValue([...stateValue].sort((a, b)=>a[sortValue].localeCompare(b[sortValue])))  //.sort() method sorts the elements of an array   The localeCompare() method compares two strings in the current locale
     //setNewBookValue(currentItems.sort((a, b)=>a.sortValue < b.sortValue ? 1 : -1))
