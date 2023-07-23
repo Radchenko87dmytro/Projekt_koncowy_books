@@ -4,6 +4,9 @@ import AllBooksClass from './components/ALLBooks/AllBooksClass';
 import Header from './components/Header/Header';
 import { useState } from 'react';
 import axios from "axios";
+import Navbar from './components/Navbar';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Home from './components/Home';
 
 const state = [
     {
@@ -75,20 +78,30 @@ const App = ()=> {
   return (
     <div className="App">
       <Header addBookHandler={addBookHandler} />
-      <hr></hr>
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path="/AllBooks" element={<AllBooks stateValue={stateValue} deleteBook={deleteBook} editBook={editBook} onChange={onChange} searchFormHandler={searchFormHandler}/>}/>
+          <Route path="/AllBooksClass" element={<AllBooksClass deleteBook={deleteBook} 
+                                                               editBook={editBook} 
+                                                               onChange={onChange} 
+                                                               searchFormHandler={searchFormHandler}/>}/>
+        </Routes>
+      </Router>
+      
 
-      <AllBooks stateValue={stateValue} 
+      {/* <AllBooks stateValue={stateValue} 
                 deleteBook={deleteBook} 
                 editBook={editBook} 
                 onChange={onChange} 
                 searchFormHandler={searchFormHandler}/>
-      <hr></hr>
       
       <AllBooksClass  
                 deleteBook={deleteBook} 
                 editBook={editBook} 
                 onChange={onChange} 
-                searchFormHandler={searchFormHandler}/>
+                searchFormHandler={searchFormHandler}/> */}
                 
     </div>
   )

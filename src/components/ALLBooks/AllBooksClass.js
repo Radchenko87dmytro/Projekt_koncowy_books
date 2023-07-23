@@ -26,7 +26,7 @@ class AllBooks extends React.Component {
         })
 
         
-        //this.deleteBook = this.deleteBook.bind(this)
+        //this.deleteBookClass = this.deleteBookClass.bind(this)
         //this.editBook = this.editBook.bind(this)
         
         //console.log(this.state.users)
@@ -41,12 +41,19 @@ class AllBooks extends React.Component {
         
     }
     
+    deleteBookClass (id) {
+        console.log(id);
+       //this.setState({
+             //users: this.state.users.filter((el) => el.id !== id)
+              // users: [...this.state.users, this.state.users.splice(pos, 1)]
+       // })
+    }
 
     render () {
 
         return (
             <div className='allBooks_body'>
-                <div className='allBooks_border' >
+                <div className='allBooks_borderClass' >
                 
 
 
@@ -61,8 +68,6 @@ class AllBooks extends React.Component {
                         ]}
                     />
 
-                    <hr></hr>
-                    <hr></hr>
                     
                     <SearchForm
                         //value={searchQuery}
@@ -79,7 +84,7 @@ class AllBooks extends React.Component {
                 <ImaginedWriter key={item.id}
                                 number={item.id}
                                 state={item}
-                                
+                                 deleteBook={this.deleteBookClass(id)}
                                 />
                     
                     
