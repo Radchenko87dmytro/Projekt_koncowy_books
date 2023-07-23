@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MySelect = ({options, defaultValue, value, onChange}) => {
-<<<<<<< HEAD
     
     const  onChangeHandler = (event) =>{
         console.log(event.target.value)
@@ -17,16 +16,6 @@ const MySelect = ({options, defaultValue, value, onChange}) => {
              >
 
                 <option value="">{defaultValue}</option>
-=======
-    return (
-        <div>
-            <p>Filter</p>
-             <select value={value}
-                     onChange={event => onChange(event.target.value)}
-             >
-
-                <option disabled value="">{defaultValue}</option>
->>>>>>> 8e011a324f38add253ed1248892bc180e644f72a
                 {options.map(option =>
                     <option key={option.value} value={option.value}>
                         {option.name}

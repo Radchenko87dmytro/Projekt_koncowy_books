@@ -28,11 +28,6 @@ const AllBooks =(props)=> {
                         defaultValue="All"
                         options={[
                             {value: "headLine", name : "By title"},
-                            {value: "author", name : "By author"},
-
-                        defaultValue="Filter by"
-                        options={[
-                            {value: "headLine", name : "By title"},
                             {value: "author", name : "By authot"},
                             {value: "opis", name : "By description"},
                         ]}
