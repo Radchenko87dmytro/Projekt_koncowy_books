@@ -27,7 +27,9 @@ class OneBook extends React.Component {
         return (
             <div className='oneBook_body'>
               <h1>Book {this.props.number}</h1> 
-              <Title classTitle="naglowek-1" title={this.props.state.headLine}></Title>
+              <h1>Book {this.props.state}</h1> 
+              {console.log(this.props.state)}
+              <Title classTitle="naglowek-1" title={this.props.state}></Title>
               <Author classAuthor="author-class" author={this.props.state.author}></Author>
               <Opis classOpis="opis-class" opis={this.props.state.opis}></Opis>
               <Delete_book classDeleteBook="deleteBook" Delete_book = "Delete" 

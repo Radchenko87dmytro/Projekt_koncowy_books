@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Button from '../Button';
 import "./Header.scss";
 import InputForm from './InputForm';
-
+import ButtonLog from './ButtonLog';
+import Button from '../Button';
 
 const Header = (props) => {
 
@@ -11,7 +11,6 @@ const [inpntFormVisible, setInpntFormVisible] = useState(false)
 
 const addBookHandler = (inputValue)=>{
     props.addBookHandler(inputValue)
-    console.log(inputValue)
 }
    
 
@@ -34,7 +33,8 @@ const addBookHandler = (inputValue)=>{
             </div>
             
             <div className='buttons'>
-                <button disabled>Login</button>
+                {/* <ButtonLog /> */}
+                <ButtonLog text="log" />
                 <button disabled>Sign up</button>
             </div>
             
