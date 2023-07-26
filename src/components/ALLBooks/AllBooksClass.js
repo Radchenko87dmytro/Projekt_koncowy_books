@@ -22,11 +22,11 @@ class AllBooks extends React.Component {
         
         axios.get(baseUrl).then((res) => {
             this.setState({users: res.data.data})
-            console.log(this.state.users)
+            //console.log(this.state.users)
         })
 
         
-        //this.deleteBookClass = this.deleteBookClass.bind(this)
+        //this.deleteBook = this.deleteBook.bind(this)
         //this.editBook = this.editBook.bind(this)
         
         //console.log(this.state.users)
@@ -41,12 +41,12 @@ class AllBooks extends React.Component {
         
     }
     
-    deleteBookClass (id) {
-        console.log(id);
-       //this.setState({
-             //users: this.state.users.filter((el) => el.id !== id)
-              // users: [...this.state.users, this.state.users.splice(pos, 1)]
-       // })
+    deleteBook (id) {
+        console.log("AllBooDel " + id);
+       this.setState({
+             users: this.state.users.filter((el) => el.id !== id)
+             //users: [...this.state.users, this.state.users.splice(pos, 1)]
+       })
     }
 
     render () {
@@ -79,12 +79,12 @@ class AllBooks extends React.Component {
                     ? 
                     <h2>Book store is empty</h2>
                     :
-                this.state.users.map((item, id) =>
+                this.state.users.map((item) =>
                     
                 <ImaginedWriter key={item.id}
                                 number={item.id}
                                 state={item}
-                                 deleteBook={this.deleteBookClass(id)}
+                                 deleteBook={()=>this.deleteBook(item.id)}
                                 />
                     
                     

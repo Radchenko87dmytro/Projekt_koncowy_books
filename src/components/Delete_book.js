@@ -4,13 +4,13 @@ class Delete_book extends React.Component {
     
     render() {
         
-const deleteBookHandler = () => {
-    this.props.deleteBook() 
-    }
+// const deleteBookHandler = () => {
+//     this.props.deleteBook() 
+//     }
 
         return (
             <button className={this.props.classDeleteBook} 
-                    onClick={deleteBookHandler}>{this.props.Delete_book}
+                    onClick={this.props.deleteBook}>{this.props.Delete_book}
             </button>
         )
     }
