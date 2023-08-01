@@ -15,29 +15,18 @@ class AllBooks extends React.Component {
 
         this.state = {
             //selectedSort: "",
-            users: []
-            
+            users: [],
+            keys: ["avatar", "email", "first_name", "last_name", "id"],
         }
 
         
         axios.get(baseUrl).then((res) => {
             this.setState({users: res.data.data})
-            //console.log(this.state.users)
+            console.log(this.state.users)
         })
 
         
-        //this.deleteBook = this.deleteBook.bind(this)
-        //this.editBook = this.editBook.bind(this)
         
-        //console.log(this.state.users)
-        
-        //this.onchange1 = this.onchange1.bind(this);
-
-        // onchange1(sortValue) {
-        //     this.setState({
-        //         sortValue
-        //     })
-        // }
         
     }
     
@@ -47,6 +36,22 @@ class AllBooks extends React.Component {
              users: this.state.users.filter((el) => el.id !== id)
              //users: [...this.state.users, this.state.users.splice(pos, 1)]
        })
+    }
+    
+    searchFormHandler(searchQuery){
+        const keys = ["avatar", "email", "first_name", "last_name", "id"]
+        console.log(searchQuery);
+
+    //         this.setState({
+    //         users: this.state.users.filter((item) => item.first_name.toLowerCase().includes(searchQuery.toLowerCase()))      
+    //   })
+
+  
+    //     this.setState({
+    //         users: this.state.users.filter((item) =>
+    //         keys.some((key) => item[key].toLowerCase().includes(searchQuery.toLowerCase())))     
+    //   })
+
     }
 
     render () {
@@ -67,14 +72,12 @@ class AllBooks extends React.Component {
                             {value: "opis", name : "By description"},
                         ]}
                     />
-
                     
                     <SearchForm
-                        //value={searchQuery}
                         searchFormHandler={this.searchFormHandler}
-                        placeholder="Search"
                     />
-                {console.log(this.state.users)}
+
+                {/* {console.log(this.state.users)} */}
                 {this.state.users.length === 0 
                     ? 
                     <h2>Book store is empty</h2>

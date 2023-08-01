@@ -1,29 +1,46 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
-const SearchForm = (props) => {
+const SearchForm = ((props, ref) => {
 
     const[searchQuery, setSearchQuery] = useState("")
-      
-    const searchFormHandler = (event)=>{
-        setSearchQuery(event.target.value)
-        // setSearchQuery({
-        //     ...searchQuery,
-        //        "" : event.target.value,
-        // })
-        props.searchFormHandler(searchQuery)
-        console.log(searchQuery)
-        console.log(event.target.value)
-    }   
-       
+    const inputEl = useRef("")
+    // const getSearch = ()=>{
+    //     props.searchFormHandler(inputEl.current.value)
+    //     console.log(inputEl.current.value)
+    //     setSearchQuery(inputEl.current.value)
+    // }
+
+     
+        
+        
+     //const searchFormHandler = (e)=>{
             
+            //setSearchQuery(e.target.value)
+            //props.searchFormHandler(searchQuery)
+            console.log(searchQuery)         
+        //}
+      
+         useEffect(()=>{ 
+            props.searchFormHandler(searchQuery)
+            }, [searchQuery])
+      
+     
 
     return (
         <div>
-             <h2>Search</h2> 
-                        <input value={searchQuery} onChange={searchFormHandler}></input>
+            <h2>Search</h2> 
+            <input type="text"
+                   //value={inputEl.current.value}
+                   value={searchQuery}
+                   //onChange={getSearch}
+                   onChange={e => setSearchQuery(e.target.value)} 
+                   placeholder="Search"
+                   ref={inputEl}
+                   >
+            </input>
                     
         </div>
     );
-};
+});
 
 export default SearchForm;

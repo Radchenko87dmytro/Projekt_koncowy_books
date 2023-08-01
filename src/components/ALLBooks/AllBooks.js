@@ -14,9 +14,6 @@ const AllBooks =(props)=> {
         props.onChange(sortValue)
     }
 
-    const searchFormHandler = (searchQuery)=> {
-        props.searchFormHandler(searchQuery)
-    }
     
         return (
             <div className='allBooks_body'>
@@ -32,14 +29,9 @@ const AllBooks =(props)=> {
                             {value: "opis", name : "By description"},
                         ]}
                     />
-
-                    <hr></hr>
-                    <hr></hr>
                     
                     <SearchForm
-                        //value={searchQuery}
-                        searchFormHandler={searchFormHandler}
-                        placeholder="Search"
+                        searchFormHandler={props.searchFormHandler}
                     />
 
                     {/* {props.stateValue.map((stateValue, pos) => 

@@ -51,12 +51,31 @@ const App = ()=> {
     //setNewBookValue(currentItems.sort((a, b)=>a.sortValue < b.sortValue ? 1 : -1))
   }
   
+  const keys = ["headLine", "author", "opis"]
+
   const searchFormHandler = (searchQuery)=>{
-    !searchQuery 
+    console.log(searchQuery)
+    console.log(typeof(searchQuery))
+    // if (searchQuery.length === 0 || searchQuery === null){
+    //   return setNewBookValue([...stateValue])
+    // } else {
+    //   return setNewBookValue([...stateValue].filter((item) =>
+    //   keys.some((key) => item[key].toLowerCase().includes(searchQuery.toLowerCase()))))
+    // }
+     
+
+    searchQuery = ""
     ?
     setNewBookValue([...stateValue])
     :
-    setNewBookValue([...stateValue].filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase())))                   
+
+    // setNewBookValue([...stateValue].filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase()) 
+    //                                             || item.author.toLowerCase().includes(searchQuery.toLowerCase())
+    //                                             || item.opis.toLowerCase().includes(searchQuery.toLowerCase()))) 
+    
+    setNewBookValue([...stateValue].filter((item) =>
+      keys.some((key) => item[key].toLowerCase().includes(searchQuery.toLowerCase()))))
+ 
   }
 
   
