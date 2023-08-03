@@ -1,5 +1,4 @@
 import React, { Component } from 'react'; 
-import OneBookClass from './OneBook';
 import './AllBooks.scss';
 import MySelect from './MySelect';
 import SearchForm from './SearchForm';
@@ -16,18 +15,14 @@ class AllBooks extends React.Component {
         this.state = {
             //selectedSort: "",
             users: [],
-            keys: ["avatar", "email", "first_name", "last_name", "id"],
+            keys: ["email", "first_name", "last_name"],
         }
 
-        
         axios.get(baseUrl).then((res) => {
             this.setState({users: res.data.data})
             console.log(this.state.users)
         })
-
-        
-        
-        
+ 
     }
     
     deleteBook (id) {
@@ -39,18 +34,15 @@ class AllBooks extends React.Component {
     }
     
     searchFormHandler(searchQuery){
-        const keys = ["avatar", "email", "first_name", "last_name", "id"]
         console.log(searchQuery);
+        this.setState({
+            users: this.state.users.filter((item) =>
+            this.state.keys.some((key) => item[key].toLowerCase().includes(searchQuery.toLowerCase())))     
+      })
+    }
 
-    //         this.setState({
-    //         users: this.state.users.filter((item) => item.first_name.toLowerCase().includes(searchQuery.toLowerCase()))      
-    //   })
-
-  
-    //     this.setState({
-    //         users: this.state.users.filter((item) =>
-    //         keys.some((key) => item[key].toLowerCase().includes(searchQuery.toLowerCase())))     
-    //   })
+    onChange(val){
+        console.log(val);
 
     }
 
@@ -60,8 +52,6 @@ class AllBooks extends React.Component {
             <div className='allBooks_body'>
                 <div className='allBooks_borderClass' >
                 
-
-
                     <MySelect
                         value={this.selectedSort}
                         onChange={this.onChange}
@@ -74,7 +64,7 @@ class AllBooks extends React.Component {
                     />
                     
                     <SearchForm
-                        searchFormHandler={this.searchFormHandler}
+                        searchFormHandler={(searchQuery)=>this.searchFormHandler(searchQuery)}
                     />
 
                 {/* {console.log(this.state.users)} */}
@@ -89,17 +79,6 @@ class AllBooks extends React.Component {
                                 state={item}
                                  deleteBook={()=>this.deleteBook(item.id)}
                                 />
-                    
-                    
-
-                    // this.state.users.map((item) => 
-        
-                        // <OneBookClass deleteBook={()=>this.props.deleteBook(pos)} 
-                        //          number={pos+1}  
-                        //          state={el} 
-                        //          key={el.id} 
-                        //          editBook={()=>this.props.editBook} 
-                        //          pos={pos}/>
                     )
                 }     
                     

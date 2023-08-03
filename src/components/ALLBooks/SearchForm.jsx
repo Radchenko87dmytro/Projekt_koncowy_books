@@ -1,44 +1,22 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
-const SearchForm = ((props, ref) => {
+const SearchForm = ((props) => {
 
     const[searchQuery, setSearchQuery] = useState("")
-    const inputEl = useRef("")
-    // const getSearch = ()=>{
-    //     props.searchFormHandler(inputEl.current.value)
-    //     console.log(inputEl.current.value)
-    //     setSearchQuery(inputEl.current.value)
-    // }
-
-     
-        
-        
-     //const searchFormHandler = (e)=>{
-            
-            //setSearchQuery(e.target.value)
-            //props.searchFormHandler(searchQuery)
-            console.log(searchQuery)         
-        //}
-      
+    
          useEffect(()=>{ 
             props.searchFormHandler(searchQuery)
             }, [searchQuery])
       
-     
-
     return (
         <div>
             <h2>Search</h2> 
             <input type="text"
-                   //value={inputEl.current.value}
                    value={searchQuery}
-                   //onChange={getSearch}
                    onChange={e => setSearchQuery(e.target.value)} 
                    placeholder="Search"
-                   ref={inputEl}
                    >
-            </input>
-                    
+            </input>      
         </div>
     );
 });

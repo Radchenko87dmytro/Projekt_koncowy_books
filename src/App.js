@@ -2,8 +2,7 @@ import './App.scss';
 import AllBooks from './components/ALLBooks/AllBooks';
 import AllBooksClass from './components/ALLBooks/AllBooksClass';
 import Header from './components/Header/Header';
-import { useState } from 'react';
-import axios from "axios";
+import { useState} from 'react';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Home from './components/Home';
@@ -44,41 +43,25 @@ const App = ()=> {
     setNewBookValue([...stateValue, inputValue])
   }
 
-
-
   const onChange = (sortValue) =>{
+    console.log(sortValue);
+    //if(sortValue==="")
     setNewBookValue([...stateValue].sort((a, b)=>a[sortValue].localeCompare(b[sortValue])))  //.sort() method sorts the elements of an array   The localeCompare() method compares two strings in the current locale
     //setNewBookValue(currentItems.sort((a, b)=>a.sortValue < b.sortValue ? 1 : -1))
   }
   
   const keys = ["headLine", "author", "opis"]
-
   const searchFormHandler = (searchQuery)=>{
     console.log(searchQuery)
     console.log(typeof(searchQuery))
-    // if (searchQuery.length === 0 || searchQuery === null){
-    //   return setNewBookValue([...stateValue])
-    // } else {
-    //   return setNewBookValue([...stateValue].filter((item) =>
-    //   keys.some((key) => item[key].toLowerCase().includes(searchQuery.toLowerCase()))))
-    // }
-     
-
+    
     searchQuery = ""
     ?
     setNewBookValue([...stateValue])
     :
-
-    // setNewBookValue([...stateValue].filter(item => item.headLine.toLowerCase().includes(searchQuery.toLowerCase()) 
-    //                                             || item.author.toLowerCase().includes(searchQuery.toLowerCase())
-    //                                             || item.opis.toLowerCase().includes(searchQuery.toLowerCase()))) 
-    
     setNewBookValue([...stateValue].filter((item) =>
       keys.some((key) => item[key].toLowerCase().includes(searchQuery.toLowerCase()))))
- 
   }
-
-  
 
   const deleteBook = (pos) =>{
     if (window.confirm("Are you sure delete Book?")){ //modal window
@@ -109,20 +92,7 @@ const App = ()=> {
                                                                searchFormHandler={searchFormHandler}/>}/>
         </Routes>
       </Router>
-      
-
-      {/* <AllBooks stateValue={stateValue} 
-                deleteBook={deleteBook} 
-                editBook={editBook} 
-                onChange={onChange} 
-                searchFormHandler={searchFormHandler}/>
-      
-      <AllBooksClass  
-                deleteBook={deleteBook} 
-                editBook={editBook} 
-                onChange={onChange} 
-                searchFormHandler={searchFormHandler}/> */}
-                
+             
     </div>
   )
 }
