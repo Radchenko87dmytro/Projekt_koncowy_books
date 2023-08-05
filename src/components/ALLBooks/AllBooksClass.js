@@ -41,8 +41,19 @@ class AllBooks extends React.Component {
       })
     }
 
-    onChange(val){
+    onChange(val){ //some refactoring for AllBooksClass component
         console.log(val);
+        if(val==="headLine"){
+            val="first_name"
+        } else if(val==="author"){
+            val="last_name"
+        } else if(val==="opis"){
+            val="email"
+        }
+        console.log(val);
+        this.setState({
+            users: this.state.users.sort((a, b)=>a[val].localeCompare(b[val]))     
+      })
 
     }
 
@@ -54,12 +65,13 @@ class AllBooks extends React.Component {
                 
                     <MySelect
                         value={this.selectedSort}
-                        onChange={this.onChange}
+                        onChange={(val)=>this.onChange(val)}
                         defaultValue="All"
                         options={[
-                            {value: "headLine", name : "By title"},
-                            {value: "author", name : "By author"},
-                            {value: "opis", name : "By description"},
+                            //{value: "all", name : "All"},
+                            {value: "headLine", name : "By title/First name"},
+                            {value: "author", name : "By author/Last name"},
+                            {value: "opis", name : "By description/Email"},
                         ]}
                     />
                     

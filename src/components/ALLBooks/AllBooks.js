@@ -22,8 +22,9 @@ const AllBooks =(props)=> {
                     <MySelect
                         value={selectedSort}
                         onChange={onChange}
-                        defaultValue="All"
+                        //defaultValue="All"
                         options={[
+                            //{value: "All", name : "All"},
                             {value: "headLine", name : "By title"},
                             {value: "author", name : "By authot"},
                             {value: "opis", name : "By description"},
