@@ -12,6 +12,7 @@
             grid-area: head;
         }
         .input_area{
+            
             display:inline-flex;
             grid-area: input; 
             //grid-column: 1/4;
@@ -36,6 +37,7 @@
         
 
         .input_form_items{
+            
             width: 35%;
             border-radius: 10px;
             background: #e89b2b;
@@ -44,6 +46,7 @@
         }
         .form_item{
             
+             
             padding: 1rem 1rem;
             border-radius: 15px;
         }
@@ -53,10 +56,12 @@
             
         }
         input{
+            display: grid;
             border-radius: 15px;
-            padding:  1rem 6rem;
+            padding:  1rem 5rem;
             margin-top: 0.5rem;
-            text-align: center;
+            align-items: center;
+            justify-content: center;
         }
 
 }
