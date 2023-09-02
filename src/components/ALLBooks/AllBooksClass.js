@@ -5,7 +5,7 @@ import SearchForm from './SearchForm';
 import axios from "axios";
 import ImaginedWriter from '../ImaginedWriter';
 
-const baseUrl = "https://reqres.in/api/users?page=1"
+const baseUrl = "https://reqres.in/api/users"  //?page=2
 
 class AllBooks extends React.Component {
 
@@ -15,15 +15,37 @@ class AllBooks extends React.Component {
         this.state = {
             //selectedSort: "",
             users: [],
+            loading: false,
+            currentPage: 1,
+            usersPerPage: 2,
             keys: ["email", "first_name", "last_name"],
         }
 
-        axios.get(baseUrl).then((res) => {
+        const fetchPosts = async () => { 
+            this.setState({loading: true})
+             
+            await axios.get(baseUrl).then((res) => {
+                
             this.setState({users: res.data.data})
             console.log(this.state.users)
-        })
+            console.log(res.data.total_pages)
+            
+            })
+            this.setState({loading: false})
+            
+            console.log(this.state.loading);
+
+
+         
+
+
+        }
+        
+       fetchPosts()
+       
+    }   
  
-    }
+    
     
     deleteBook (id) {
         console.log("AllBooDel " + id);
@@ -58,6 +80,13 @@ class AllBooks extends React.Component {
     }
 
     render () {
+        const loading = this.state.loading
+
+        const indexOfLastUser = this.state.currentPage * this.state.usersPerPage
+         const indexOfFirstUser = indexOfLastUser - this.state.usersPerPage
+         const currentUsers = this.state.users.slice(indexOfFirstUser, indexOfLastUser)
+         
+         //const currentUsers = Math.ceil(this.state.users.length / this.state.usersPerPage)  
 
         return (
             <div className='allBooks_body'>
@@ -80,16 +109,21 @@ class AllBooks extends React.Component {
                     />
 
                 {/* {console.log(this.state.users)} */}
-                {this.state.users.length === 0 
+                {currentUsers.length === 0 
                     ? 
                     <h2>Book store is empty</h2>
                     :
-                this.state.users.map((item) =>
+                    // this.state.loading
+                    // ?
+                    // <h2>Loading...</h2>
+                    // :
+                    currentUsers.map((item) =>
                     
                 <ImaginedWriter key={item.id}
                                 number={item.id}
                                 state={item}
-                                 deleteBook={()=>this.deleteBook(item.id)}
+                                deleteBook={()=>this.deleteBook(item.id)}
+                                loading={loading}
                                 />
                     )
                 }     
