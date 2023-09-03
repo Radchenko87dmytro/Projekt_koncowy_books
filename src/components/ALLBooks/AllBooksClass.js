@@ -4,6 +4,7 @@ import MySelect from './MySelect';
 import SearchForm from './SearchForm';
 import axios from "axios";
 import ImaginedWriter from '../ImaginedWriter';
+import Pagination from '../Pagination';
 
 const baseUrl = "https://reqres.in/api/users"  //?page=2
 
@@ -81,10 +82,13 @@ class AllBooks extends React.Component {
 
     render () {
         const loading = this.state.loading
-
+        // Get current posts
         const indexOfLastUser = this.state.currentPage * this.state.usersPerPage
-         const indexOfFirstUser = indexOfLastUser - this.state.usersPerPage
-         const currentUsers = this.state.users.slice(indexOfFirstUser, indexOfLastUser)
+        const indexOfFirstUser = indexOfLastUser - this.state.usersPerPage
+        const currentUsers = this.state.users.slice(indexOfFirstUser, indexOfLastUser)
+
+        // Change page
+        const paginate = (pageNumber) => this.setState({currentPage: pageNumber})
          
          //const currentUsers = Math.ceil(this.state.users.length / this.state.usersPerPage)  
 
@@ -125,9 +129,13 @@ class AllBooks extends React.Component {
                                 deleteBook={()=>this.deleteBook(item.id)}
                                 loading={loading}
                                 />
+                
                     )
                 }     
-                    
+                <Pagination usersPerPage={this.state.usersPerPage} 
+                            totalPosts={this.state.users.length} 
+                            paginate={paginate}
+                            />    
                 </div>
             </div>
         )
