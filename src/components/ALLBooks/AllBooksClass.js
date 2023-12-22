@@ -135,6 +135,7 @@ class AllBooks extends React.Component {
                 <Pagination usersPerPage={this.state.usersPerPage} 
                             totalPosts={this.state.users.length} 
                             paginate={paginate}
+                            currentPage={this.state.currentPage}
                             />    
                 </div>
             </div>

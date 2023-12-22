@@ -33,18 +33,24 @@
 }
 .page-item{
     display: flex;
-    
-}
-.page-link{
     border: 3px white solid;
-    height: 20px;
-    width: 20px;
+    height: 10px;
+    width: 10px;
     padding: 5px;
     margin: 5px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.page-link{
+    
+    
+    
+}
+.selectedPage {
     font-weight: bold;
+    display: flex;
     &:active{
-        background-color: green;
-    }
+            background-color: green;
+        }
 }
