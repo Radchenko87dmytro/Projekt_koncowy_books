@@ -4,37 +4,49 @@ import './ALLBooks/AllBooks.scss'
 import Delete_book from './Delete_book'
 
 class ImaginedWriter extends React.Component {
-    constructor(props){
-    super(props)
+    // constructor(props){
+    // super(props)
         // this.state={
          
         // }
         //this.deleteBook = this.deleteBook.bind(this)
-    }
+    //}
 
-    deleteBook(){
-        this.props.deleteBook()
-        console.log("del");
-    }
+    // deleteBook(){
+    //     console.log("del")
+    //     this.props.deleteBook()
+    // }
 
     render(){
-    const writerState = this.props.state    
-        return (
 
+    const writerState = this.props.state   
+    console.log(this.props.loading);
+
+        return (
         <div className='oneBook_body' >
-            <h1>Writer {writerState.number}</h1>
-            <h2>{writerState.first_name}</h2>
-            <h2>{writerState.last_name}</h2>
-            <h2>{writerState.email}</h2>
-            <br></br>
-            <img src={writerState.avatar}></img>
+            
+            {this.props.loading
+            ?
+            <h2>Loading...</h2>
+            :
+            <span>
+                <h1>Writer {writerState.id}</h1>
+                <h2>{writerState.first_name}</h2>
+                <h2>{writerState.last_name}</h2>
+                <h2>{writerState.email}</h2>
+            
+           
+                <img src={writerState.avatar}/>
+            
+            
 
             <Delete_book classDeleteBook="deleteBook" 
                          Delete_book = "Delete"
                         //  deleteBook={this.props.deleteBook}
-                        deleteBook={this.deleteBook}
+                        deleteBook={this.props.deleteBook}
                         />
-
+            </span>
+            }  
         </div>
         )
     }

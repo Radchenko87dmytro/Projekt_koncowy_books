@@ -1,4 +1,5 @@
 .oneBook_body{
+    
     color: #3a3a3a;
     font-size: 1rem;
     flex: 1;
@@ -19,6 +20,7 @@
     font-style: italic;
 }
 .Edit_Book{
+    
     &:hover {
         color: green;
         transform: scale(1.1);
@@ -55,15 +57,18 @@ label{
     
 }
 input{
+    
     border-radius: 15px;
-    padding:  1rem 6rem;
+    padding:  1rem 2.5rem;
     margin-top: 0.5rem;
     text-align: center;
+    
 }
 
 
 .editt_area{
-    display: flex;
-    justify-content: space-around;
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

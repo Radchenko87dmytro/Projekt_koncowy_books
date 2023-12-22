@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  display: grid;
 }
 
 .App-header {
@@ -16,18 +17,21 @@
 }
 
 .navLinks{
-  background-color:#dae4ed;
+  background-color:#c9d8e6;
   color: green;
   padding: 10px 0px 30px 0px;
-  
+    a{
+      color: white;
+      &:active{
+        color: gold;
+      }
+    }
   :Link{
-    font-size: 20px;
+    font-size: 25px;
     margin: 20px;
     
-    color: white;
+    
     text-decoration: none;
-    &:active{
-      color: gold;
-    }
+    
   }
 }
