@@ -1,17 +1,14 @@
-import React, { Component } from 'react'; 
-import '../var/podstawowe.scss';
-
+import React, { Component } from "react";
+import "../var/podstawowe.css";
 
 class Author extends Component {
-    // render zwraca nam widok 
-    render() {
-        return (
-            <div>
-                <h2 className={this.props.classAuthor}>{this.props.author}</h2>
-
-            </div>
-
-        )
-    }
+  // render zwraca nam widok
+  render() {
+    return (
+      <div>
+        <h2 className={this.props.classAuthor}>{this.props.author}</h2>
+      </div>
+    );
+  }
 }
-export default Author
+export default Author;

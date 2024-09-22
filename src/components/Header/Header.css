@@ -1,0 +1,59 @@
+.header {
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: grid;
+  grid-template-columns: 40% 30% auto;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "head head head"
+    "input";
+}
+.logo_background .links .buttons {
+  grid-area: head;
+}
+.input_area {
+  display: inline-flex;
+  grid-area: input;
+
+  justify-content: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  z-index: 1;
+}
+
+.logo {
+  background: url(https://cdn.pixabay.com/photo/2016/11/29/12/50/bookcases-1869616__340.jpg);
+  height: 250px;
+}
+
+.header_link {
+  padding: 15px;
+}
+button {
+  padding: 10px 50px;
+  margin: 50px 5px;
+}
+
+.input_form_items {
+  width: 35%;
+  border-radius: 10px;
+  background: #e89b2b;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+.form_item {
+  padding: 1rem 1rem;
+  border-radius: 15px;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 5rem;
+}
+input {
+  display: grid;
+  border-radius: 15px;
+  padding: 1rem 5rem;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}

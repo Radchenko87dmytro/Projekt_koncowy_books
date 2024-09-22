@@ -1,4 +1,4 @@
-@import './var/podstawowe.scss';
+/* @import './var/podstawowe.scss'; */
 
 .App {
   text-align: center;
@@ -16,22 +16,27 @@
   color: white;
 }
 
-.navLinks{
-  background-color:#c9d8e6;
+.navLinks {
+  background-color: #c9d8e6;
   color: green;
   padding: 10px 0px 30px 0px;
-    a{
-      color: white;
-      &:active{
-        color: gold;
-      }
-    }
-  :Link{
-    font-size: 25px;
-    margin: 20px;
-    
-    
-    text-decoration: none;
-    
-  }
+}
+
+.navLinks a {
+  color: white;
+}
+
+/* .navLinks a:active {
+  color: gold;
+} */
+
+.link {
+  font-size: 25px;
+  margin: 20px;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+.link:hover {
+  color: rgb(30, 255, 0);
 }

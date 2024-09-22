@@ -1,17 +1,14 @@
-import React, {Component} from 'react'; 
-import './Title.scss'
-
+import React, { Component } from "react";
+import "./Title.css";
 
 class Title extends Component {
-// render zwraca nam widok 
-    render() {
-        return (
-            <div>
-  <h2 className={this.props.classTitle}>{this.props.title}</h2>
-            
-            </div>
-          
-        )
-    }
+  // render zwraca nam widok
+  render() {
+    return (
+      <div>
+        <h2 className={this.props.classTitle}>{this.props.title}</h2>
+      </div>
+    );
+  }
 }
-export default Title
+export default Title;

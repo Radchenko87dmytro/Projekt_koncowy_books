@@ -1,0 +1,56 @@
+.oneBook_body {
+  color: #3a3a3a;
+  font-size: 1rem;
+  flex: 1;
+  margin: 3rem 3rem;
+  background-color: white;
+  border: 5px solid #bbb5ac;
+  border-radius: 10px;
+  padding-bottom: 2rem;
+}
+.opis-class {
+  color: red;
+}
+
+.author-class {
+  color: yellow;
+}
+.naglowek-1 {
+  font-style: italic;
+}
+.Edit_Book {
+}
+
+.deleteBook:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.input_form_items {
+  width: 60%;
+  border-radius: 10px;
+  background: yellowgreen;
+  margin-top: 30px;
+
+  padding-top: 10px;
+}
+.form_item {
+  padding: 1rem 0rem;
+  border-radius: 15px;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 5rem;
+}
+input {
+  border-radius: 15px;
+  padding: 1rem 2.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.editt_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
