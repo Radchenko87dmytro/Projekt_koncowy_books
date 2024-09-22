@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
 import InputForm from "./InputForm";
-import ButtonLog from "./ButtonLog";
-import Button from "../Button";
 
 const Header = (props) => {
   const [visible, setVisible] = useState(true);
@@ -33,17 +31,11 @@ const Header = (props) => {
       <div className="links">
         <h1>Book Store</h1>
         <button
-          className="header_link"
+          className="button"
           onClick={() => setInpntFormVisible(!inpntFormVisible)}
         >
           Add book
         </button>
-      </div>
-
-      <div className="buttons">
-        {/* <ButtonLog /> */}
-        <ButtonLog text="log" />
-        <button disabled>Sign up</button>
       </div>
 
       <div className="input_area">
