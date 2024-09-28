@@ -15,7 +15,6 @@ const Header = (props) => {
       <div className="logo_background">
         {visible && (
           <div className="logo">
-            {/* <img src="https://cdn.pixabay.com/photo/2016/11/29/12/50/bookcases-1869616__340.jpg"></img>   */}
             <button className="button" onClick={() => setVisible(false)}>
               Disapear Logo
             </button>

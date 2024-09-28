@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../var/podstawowe.css";
 
 class Author extends Component {
   // render zwraca nam widok

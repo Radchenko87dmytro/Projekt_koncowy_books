@@ -38,6 +38,7 @@ const App = () => {
   const [stateValue, setNewBookValue] = useState(state);
 
   const addBookHandler = (inputValue) => {
+    console.log(inputValue);
     inputValue.id = stateValue.length + 1;
     setNewBookValue([...stateValue, inputValue]);
   };
@@ -97,6 +98,7 @@ const App = () => {
             element={
               <AllBooks
                 stateValue={stateValue}
+                addBookHandler={addBookHandler}
                 deleteBook={deleteBook}
                 editBook={editBook}
                 onChange={onChange}
