@@ -1,5 +1,6 @@
 /* Header */
 .header {
+  /* position: relative; */
   height: 250px;
   background-color: rgba(0, 0, 0, 0.35);
   display: grid;
@@ -13,8 +14,19 @@
   grid-area: head;
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .input_area {
-  display: inline-flex;
+  position: fixed;
+  top: 200px;
+  left: calc(50% - 368px / 2);
+  margin: 0px auto;
+  display: flex;
   grid-area: input;
   justify-content: center;
   grid-column-start: 1;
@@ -22,14 +34,27 @@
   z-index: 1;
 }
 
+/* #input_area {
+  position: sticky;
+  color: black;
+  background-color: black; 
+}*/
+
 .logo {
   background: url(https://cdn.pixabay.com/photo/2016/11/29/12/50/bookcases-1869616__340.jpg);
   height: 250px;
+  width: 100%;
+}
+
+.logo_background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
   padding: 10px 20px;
-  /* margin: 10px; */
+  /* text-align: center; */
   border-radius: 20px;
   font-size: 20px;
 }
@@ -51,43 +76,41 @@
     inset -2px -3px 5px rgba(255, 255, 255, 0.5);
 }
 
-/* InputForm styles */
-.input_form_items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 40%;
-  border-radius: 20px;
-  background: #e89b2b;
-  justify-content: center;
+/* Media Queries */
+
+/* For very small devices (less than 480px) */
+@media screen and (max-width: 480px) {
+  body {
+    min-width: 375px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
 }
 
-.input_wrapper div:last-child {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  background-color: aqua;
-}
+/* For tablets and mobile devices (less than 768px) */
+@media screen and (max-width: 768px) {
+  .header,
+  .logo {
+    height: 150px;
+  }
 
-.input_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .input_form_items {
+    width: 60%; /* Form occupies more space on mobile */
+  }
 
-.form_item {
-  padding: 1rem 1rem;
-  border-radius: 15px;
-}
-label {
-  font-weight: bold;
-  margin-bottom: 5rem;
-}
-input {
-  display: flex;
-  border-radius: 15px;
-  /* padding: 1rem 5rem; */
-  margin-top: 0.5rem;
-  align-items: center;
-  justify-content: center;
+  .input_area {
+    top: 100px;
+    left: calc(50% - 314px / 2);
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 8px 10px;
+    font-size: 1rem;
+  }
 }

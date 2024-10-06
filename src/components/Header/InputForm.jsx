@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Header.css";
+import "./InputForm.css";
 
 const InputForm = (props) => {
   const [titleValue, setTitleValue] = useState("");

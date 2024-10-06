@@ -1,0 +1,112 @@
+/* InputForm styles */
+.input_form_items {
+  display: flex;
+  flex-direction: column;
+  place-content: center; /*value (canter) will be used for both axes  */
+  width: 100%;
+  max-width: 400px; /* Restricts form width on larger screens */
+  border-radius: 20px;
+  background: #e89b2b;
+  padding: 2rem;
+}
+
+.input_wrapper div:last-child {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.input_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* align-items: center; */
+  box-sizing: border-box;
+  /* background-color: aqua; */
+  /* width: 80%;*/
+}
+
+.form_item {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 15px;
+  flex-direction: column;
+}
+
+.button {
+  padding: 10px 20px;
+  /* text-align: center; */
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Media Queries */
+
+/* For very small devices (less than 480px) */
+@media screen and (max-width: 480px) {
+  .input_form_items {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+}
+
+/* For tablets and mobile devices (less than 768px) */
+@media screen and (max-width: 768px) {
+  .input_form_items {
+    width: 250px; /* Form occupies more space on mobile */
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .input_wrapper div:last-child {
+    flex-direction: column;
+    gap: 10px; /* Stack the buttons on smaller screens */
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 8px 10px;
+    font-size: 1rem;
+  }
+}

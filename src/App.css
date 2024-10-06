@@ -1,4 +1,10 @@
 /* @import './var/podstawowe.scss'; */
+html {
+  scroll-behavior: smooth;
+}
+
+/* body {
+  height: 1500px; /* Temporary height to enable scrolling } */
 
 .App {
   text-align: center;
