@@ -15,6 +15,12 @@
   background-color: #dae4ed;
 }
 
+.alllBooks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .allBooks_borderClass {
   display: grid;
   border-radius: 10px;

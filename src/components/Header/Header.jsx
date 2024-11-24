@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
 import InputForm from "./InputForm";
 
@@ -6,9 +6,24 @@ const Header = (props) => {
   const [visible, setVisible] = useState(true);
   const [inpntFormVisible, setInpntFormVisible] = useState(false);
 
-  const addBookHandler = (inputValue) => {
-    props.addBookHandler(inputValue);
-  };
+  const inputFormRef = useRef(null);
+
+  // Hide InputForm if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        inputFormRef.current &&
+        !inputFormRef.current.contains(event.target)
+      ) {
+        setInpntFormVisible(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="header">
@@ -29,18 +44,15 @@ const Header = (props) => {
 
       <div className="links">
         <h1>Book Store</h1>
-        <button
-          className="button"
-          onClick={() => setInpntFormVisible(!inpntFormVisible)}
-        >
+        <button className="button" onClick={() => setInpntFormVisible(true)}>
           Add book
         </button>
       </div>
 
-      <div className="input_area">
+      <div className="input_area" ref={inputFormRef}>
         {inpntFormVisible && (
           <InputForm
-            addBookHandler={addBookHandler}
+            addBookHandler={props.addBookHandler}
             cancelHandler={() => setInpntFormVisible(false)}
           />
         )}

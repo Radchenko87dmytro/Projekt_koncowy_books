@@ -18,9 +18,8 @@ const AllBooks = (props) => {
         <MySelect
           value={selectedSort}
           onChange={onChange}
-          //defaultValue="All"
           options={[
-            //{value: "All", name : "All"},
+            { value: "All", name: "All" },
             { value: "headLine", name: "By title" },
             { value: "author", name: "By authot" },
             { value: "opis", name: "By description" },
@@ -28,27 +27,23 @@ const AllBooks = (props) => {
         />
 
         <SearchForm searchFormHandler={props.searchFormHandler} />
-
-        {/* {props.stateValue.map((stateValue, pos) => 
-                        <OneBook deleteBook={()=>deleteBook(pos)}  number={pos+1}  state={stateValue} key={pos}/> 
-                    )
-                } */}
-
-        {props.stateValue.length === 0 ? (
-          <h2>Book store is empty</h2>
-        ) : (
-          props.stateValue.map((el, pos) => (
-            <OneBook
-              deleteBook={() => props.deleteBook(pos)}
-              number={pos + 1}
-              state={el}
-              key={el.id}
-              editBook={() => props.editBook}
-              pos={pos}
-              //  id={idItem}
-            />
-          ))
-        )}
+        <div className="alllBooks">
+          {props.stateValue.length === 0 ? (
+            <h2>Book store is empty</h2>
+          ) : (
+            props.stateValue.map((el, pos) => (
+              <OneBook
+                deleteBook={() => props.deleteBook(pos)}
+                number={pos + 1}
+                state={el}
+                key={el.id}
+                editBook={() => props.editBook}
+                pos={pos}
+                //  id={idItem}
+              />
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

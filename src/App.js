@@ -3,7 +3,7 @@ import AllBooks from "./components/ALLBooks/AllBooks";
 import AllBooksClass from "./components/ALLBooks/AllBooksClass";
 import Header from "./components/Header/Header";
 import { useState } from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 
@@ -32,19 +32,41 @@ const state = [
     author: "Sochacki Tomasz",
     opis: "Nauka się wykorzystać go w praktyce",
   },
+  {
+    id: 5,
+    headLine: "W pustyni i puszczy",
+    author: "Juliusz Słowacki",
+    opis: "Ksiązka długa, fajna i nudna jedocześnie. ",
+  },
+  {
+    id: 6,
+    headLine: "Zniewolony umysł",
+    author: "Czesław Miłosz",
+    opis: "Ksiązka fajna",
+  },
+  {
+    id: 7,
+    headLine: "Dwukropek",
+    author: "Wisława Szymborska",
+    opis: "Nie nudna ksiązka",
+  },
+  {
+    id: 8,
+    headLine: "JavaScript",
+    author: "Sochacki Tomasz",
+    opis: "Nauka się wykorzystać go w praktyce",
+  },
 ];
 
 const App = () => {
   const [stateValue, setNewBookValue] = useState(state);
 
   const addBookHandler = (inputValue) => {
-    console.log(inputValue);
     inputValue.id = stateValue.length + 1;
     setNewBookValue([...stateValue, inputValue]);
   };
 
   const onChange = (sortValue) => {
-    console.log(sortValue);
     // if(sortValue==="ALL"){
     //   setNewBookValue([...stateValue])
     // }
@@ -56,9 +78,6 @@ const App = () => {
 
   const keys = ["headLine", "author", "opis"];
   const searchFormHandler = (searchQuery) => {
-    console.log(searchQuery);
-    console.log(typeof searchQuery);
-
     searchQuery = ""
       ? setNewBookValue([...stateValue])
       : setNewBookValue(

@@ -31,7 +31,6 @@ const InputForm = (props) => {
   };
 
   const cancelHandler = () => {
-    console.log("cancel");
     props.cancelHandler();
   };
 

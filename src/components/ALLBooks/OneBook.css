@@ -1,24 +1,17 @@
 .oneBook_body {
   color: #3a3a3a;
-  font-size: 1rem;
-  flex: 1;
+  /* font-size: 1rem; */
+  flex: 35%;
+  /* align-items: center; */
   margin: 3rem 3rem;
   background-color: white;
   border: 5px solid #bbb5ac;
   border-radius: 10px;
-  padding-bottom: 2rem;
-}
-.opis-class {
-  color: red;
 }
 
-.author-class {
-  color: yellow;
-}
-.naglowek-1 {
-  font-style: italic;
-}
-.Edit_Book {
+.oneBookButton {
+  padding: 10px;
+  margin: 15px;
 }
 
 .deleteBook:hover {

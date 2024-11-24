@@ -23,7 +23,7 @@
 
 .input_area {
   position: fixed;
-  top: 200px;
+  top: 70px;
   left: calc(50% - 368px / 2);
   margin: 0px auto;
   display: flex;
@@ -91,6 +91,10 @@
 
 /* For tablets and mobile devices (less than 768px) */
 @media screen and (max-width: 768px) {
+  .header {
+    grid-template-columns: 30% 70%;
+  }
+
   .header,
   .logo {
     height: 150px;
@@ -102,7 +106,7 @@
 
   .input_area {
     top: 100px;
-    left: calc(50% - 314px / 2);
+    left: calc(50% - 275px / 2);
   }
 
   h1 {

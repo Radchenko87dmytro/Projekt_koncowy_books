@@ -26,19 +26,14 @@ class AllBooks extends React.Component {
 
       await axios.get(baseUrl).then((res) => {
         this.setState({ users: res.data.data });
-        console.log(this.state.users);
-        console.log(res.data.total_pages);
       });
       this.setState({ loading: false });
-
-      console.log(this.state.loading);
     };
 
     fetchPosts();
   }
 
   deleteBook(id) {
-    console.log("AllBooDel " + id);
     this.setState({
       users: this.state.users.filter((el) => el.id !== id),
       //users: [...this.state.users, this.state.users.splice(pos, 1)]
@@ -46,7 +41,6 @@ class AllBooks extends React.Component {
   }
 
   searchFormHandler(searchQuery) {
-    console.log(searchQuery);
     this.setState({
       users: this.state.users.filter((item) =>
         this.state.keys.some((key) =>
@@ -58,7 +52,7 @@ class AllBooks extends React.Component {
 
   onChange(val) {
     //some refactoring for AllBooksClass component
-    console.log(val);
+
     if (val === "headLine") {
       val = "first_name";
     } else if (val === "author") {
@@ -66,7 +60,7 @@ class AllBooks extends React.Component {
     } else if (val === "opis") {
       val = "email";
     }
-    console.log(val);
+
     this.setState({
       users: this.state.users.sort((a, b) => a[val].localeCompare(b[val])),
     });

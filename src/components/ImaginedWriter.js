@@ -1,7 +1,6 @@
-//import React from 'react'
-import React, { Component } from "react";
+import React from "react";
 import "./ALLBooks/AllBooks.css";
-import Delete_book from "./Delete_book";
+import DeleteBook from "./DeleteBook";
 
 class ImaginedWriter extends React.Component {
   // constructor(props){
@@ -19,7 +18,6 @@ class ImaginedWriter extends React.Component {
 
   render() {
     const writerState = this.props.state;
-    console.log(this.props.loading);
 
     return (
       <div className="oneBook_body">
@@ -32,11 +30,9 @@ class ImaginedWriter extends React.Component {
             <h2>{writerState.last_name}</h2>
             <h2>{writerState.email}</h2>
 
-            <img src={writerState.avatar} />
+            <img alt="" src={writerState.avatar} />
 
-            <Delete_book
-              classDeleteBook="deleteBook"
-              Delete_book="Delete"
+            <DeleteBook
               //  deleteBook={this.props.deleteBook}
               deleteBook={this.props.deleteBook}
             />

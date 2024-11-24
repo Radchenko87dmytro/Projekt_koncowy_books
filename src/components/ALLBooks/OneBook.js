@@ -1,52 +1,63 @@
-import React, { Component } from "react";
-import Opis from "../Opis";
-import Title from "../Title";
-import Author from "../Author";
+import React from "react";
 import "./OneBook.css";
-import Delete_book from "../Delete_book";
-import Edit_book from "../Edit_book";
 import EditForm from "./EditForm";
+import DeleteBook from "../DeleteBook";
+import EditBook from "../EditBook";
 
 class OneBook extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       editBook: false,
-      didUpdate: "componentDidUpdate",
     };
-  }
-
-  componentDidUpdate() {
-    if (this.state.didUpdate != "did") console.log("componentDidUpdate");
   }
 
   render() {
     return (
       <div className="oneBook_body">
         <h1>Book {this.props.number}</h1>
-        <Title
-          classTitle="naglowek-1"
-          title={this.props.state.headLine}
-        ></Title>
-        <Author
-          classAuthor="author-class"
-          author={this.props.state.author}
-        ></Author>
-        <Opis classOpis="opis-class" opis={this.props.state.opis}></Opis>
-        <Delete_book
-          classDeleteBook="deleteBook"
-          Delete_book="Delete"
-          deleteBook={this.props.deleteBook}
-        />
-        <Edit_book
-          classEditBook="Edit_Book"
-          Edit_book="Edit book"
+        <div className="booksProperties">
+          <h2 className="naglowek-1">
+            {/* <h3>Title: </h3> */}
+            {this.props.state.headLine}
+          </h2>
+          <h2 className="author-class">
+            {/* <p>Author</p> */}
+            {this.props.state.author}
+          </h2>
+          <h2 className="opis-class">
+            {/* <p>Description</p> */}
+            {this.props.state.opis}
+          </h2>
+        </div>
+
+        <DeleteBook deleteBook={this.props.deleteBook} />
+        <EditBook
           edit={() => {
             this.setState({
               editBook: !this.state.editBook,
             });
           }}
         />
+        <div>
+          <svg
+            width="34px"
+            height="34px"
+            className="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 21 20"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m11.479 1.712 2.367 4.8a.532.532 0 0 0 .4.292l5.294.769a.534.534 0 0 1 .3.91l-3.83 3.735a.534.534 0 0 0-.154.473l.9 5.272a.535.535 0 0 1-.775.563l-4.734-2.49a.536.536 0 0 0-.5 0l-4.73 2.487a.534.534 0 0 1-.775-.563l.9-5.272a.534.534 0 0 0-.154-.473L2.158 8.48a.534.534 0 0 1 .3-.911l5.294-.77a.532.532 0 0 0 .4-.292l2.367-4.8a.534.534 0 0 1 .96.004Z"
+            />
+          </svg>
+        </div>
 
         <div className="editt_area">
           {this.state.editBook && (

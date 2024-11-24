@@ -84,7 +84,7 @@ input {
 /* For tablets and mobile devices (less than 768px) */
 @media screen and (max-width: 768px) {
   .input_form_items {
-    width: 250px; /* Form occupies more space on mobile */
+    width: 200px; /* Form occupies more space on mobile */
     padding: 2rem;
   }
 

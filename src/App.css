@@ -3,6 +3,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  /* width: 100%; */
+}
+
 /* body {
   height: 1500px; /* Temporary height to enable scrolling } */
 
@@ -22,27 +26,8 @@ html {
   color: white;
 }
 
-.navLinks {
-  background-color: #c9d8e6;
-  color: green;
-  padding: 10px 0px 30px 0px;
-}
-
-.navLinks a {
-  color: white;
-}
-
-/* .navLinks a:active {
-  color: gold;
-} */
-
-.link {
-  font-size: 25px;
-  margin: 20px;
-  text-decoration: none;
-  padding-left: 20px;
-}
-
-.link:hover {
-  color: rgb(30, 255, 0);
+@media screen and (min-width: 480px) {
+  body {
+    min-width: 375px;
+  }
 }
